@@ -3,3 +3,11 @@ pipeline:
     image: golang
     commands:
       - echo Hello World
+
+  publish:
+    image: alpine
+    commands:
+      - echo Deploy World
+    when:
+      event: deployment
+      environment: staging
